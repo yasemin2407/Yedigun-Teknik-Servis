@@ -2,7 +2,7 @@
    1. TEMEL SIFIRLAMA VE AYARLAR
    ========================================= */
 html {
-    scroll-behavior: smooth; /* Tıklanan yere yumuşakça kaymayı sağlar */
+    scroll-behavior: smooth;
 }
 
 * {
@@ -24,7 +24,6 @@ body {
     margin: 0 auto;
 }
 
-/* Menü tıklandığında başlıklar menünün altında kalmasın diye pay bırakıyoruz */
 section {
     scroll-margin-top: 100px;
 }
@@ -35,8 +34,8 @@ section {
 header {
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 1.2rem 0; /* Sabit menü çok kalın durmasın diye inceltilmişti */
-    position: sticky; /* Menüyü sayfanın üstüne sabitler */
+    padding: 1.2rem 0;
+    position: sticky;
     top: 0; 
     z-index: 1000;
 }
@@ -47,14 +46,12 @@ header {
     align-items: center;
 }
 
-/* Logo */
 .logo img {
     max-height: 60px;
     display: block;
     object-fit: contain;
 }
 
-/* Linkler */
 nav ul {
     list-style: none;
     display: flex;
@@ -80,7 +77,6 @@ nav > ul > li > a:hover {
     color: #e63946;
 }
 
-/* Hemen Ara Butonu */
 .btn-call {
     background-color: #e63946;
     color: white;
@@ -94,7 +90,6 @@ nav > ul > li > a:hover {
    3. HERO (ANA KARŞILAMA EKRANI)
    ========================================= */
 .hero {
-    /* 'center 30%' kısmındaki 30 değerini değiştirerek resmi tam istediğin yere oturtabilirsin */
     background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('bg.png') center 63%/cover no-repeat;
     background-color: #1d3557;
     color: white;
@@ -119,10 +114,10 @@ nav > ul > li > a:hover {
    ========================================= */
 .page-banner {
     width: 100%;
-    background-color: #1d3557; /* Arka planda resim yok, sadece kurumsal lacivert renk */
+    background-color: #1d3557;
     color: white;
     text-align: center;
-    padding: 1.2rem 1rem; /* Kibar ve ince bir şerit */
+    padding: 1.2rem 1rem;
     margin-bottom: 3rem;
 }
 
@@ -247,28 +242,24 @@ nav > ul > li > a:hover {
     transform: scale(1.03);
 }
 
-/* FOTOĞRAFI KESMEDEN TAM SIĞDIRMA */
 .gallery-grid img.sigdir {
-    object-fit: contain; /* Fotoğrafı kırpmak yerine küçülterek kutunun içine tam oturtur */
-    background-color: #f1f3f5; /* Fotoğraf tam sığdığında yanlarda kalacak boşluklara çok hafif, şık bir gri fon atar */
+    object-fit: contain;
+    background-color: #f1f3f5;
 }
 
-/* FOTOĞRAFI KESEREK AMA MERKEZDEN ORTALAYARAK GÖSTERME */
 .gallery-grid img.ortala {
     object-fit: cover;
-    object-position: center center; /* Görselin tam göbeğini odaklar */
+    object-position: center center;
 }
 
-/* FOTOĞRAFIN ÜST KISMINA ODAKLANMA (Örn: Klimalar için) */
 .gallery-grid img.ustten-hizala {
     object-fit: cover;
-    object-position: center top; /* Görselin altını keser, üst kısmını (tavana yakın yeri) odaklar */
+    object-position: center top;
 }
 
-/* FOTOĞRAFIN ALT KISMINA ODAKLANMA (Örn: Yerdeki motorlar için) */
 .gallery-grid img.alttan-hizala {
     object-fit: cover;
-    object-position: center bottom; /* Görselin üstünü keser, yerdeki detayı odaklar */
+    object-position: center bottom;
 }
 
 /* =========================================
@@ -282,7 +273,7 @@ footer {
 }
 
 /* =========================================
-   9. SABİT SOSYAL MEDYA BUTONLARI
+   9. SAĞ ALT SABİT BUTONLAR (WHATSAPP, İNSTAGRAM VE ARAMA)
    ========================================= */
 .floating-social {
     position: fixed;
@@ -290,8 +281,8 @@ footer {
     right: 30px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* İki buton arasındaki boşluk */
-    z-index: 1000; /* Her zaman diğer içeriklerin üstünde kalmasını sağlar */
+    gap: 15px;
+    z-index: 1000;
 }
 
 .float-btn {
@@ -306,57 +297,78 @@ footer {
     text-decoration: none;
 }
 
-/* İkonların Boyut ve Rengi */
 .float-btn svg {
     width: 30px;
     height: 30px;
     fill: white;
 }
 
-/* WhatsApp Rengi */
 .whatsapp {
     background-color: #25d366;
 }
 
-/* Instagram Renk Geçişi (Gradient) */
 .instagram {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-/* Fareyle Üzerine Gelince Büyüme Efekti */
 .float-btn:hover {
     transform: scale(1.1) translateY(-5px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Sağ Alttaki Yuvarlak Arama Butonu (Instagram ve WhatsApp ile birebir uyumlu) */
+.floating-search-btn {
+    width: 55px;
+    height: 55px;
+    background-color: #1d3557;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.floating-search-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: #e63946;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.floating-search-btn svg {
+    width: 26px;
+    height: 26px;
+    fill: #fff;
 }
 
 /* =========================================
    10. MOBİL UYUM (CEP TELEFONU EKRANLARI İÇİN)
    ========================================= */
 @media (max-width: 768px) {
-    /* 1. Menü ve Header Ayarları (Telefonda alt alta dizer) */
     .navbar {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
     nav ul {
-        flex-wrap: wrap; /* Sığmayan linkleri alt satıra atar */
+        flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
     }
     nav a {
-        font-size: 1rem; /* Telefondaki menü yazılarını biraz küçülttük */
+        font-size: 1rem;
     }
     
-    /* 2. Ana Karşılama Ekranı (Hero) */
     .hero {
-        padding: 4rem 1rem; /* Kutuyu telefona göre daralttık */
+        padding: 4rem 1rem;
     }
     .hero h2 {
-        font-size: 2.2rem; /* Dev başlığı telefon ekranına sığdırdık */
+        font-size: 2.2rem;
     }
     
-    /* 3. Hakkımızda Bölümü (Resim üstte, yazı altta olacak) */
     .about-section {
         flex-direction: column; 
         gap: 2rem;
@@ -368,18 +380,16 @@ footer {
         font-size: 1.8rem;
     }
     
-    /* 4. Galeri (Mobilde yan yana 2 resim ve orantılı dikdörtgen görünüm) */
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* Telefonda yan yana 2 resim gösterir */
-        gap: 10px; /* Telefondaki dar ekranda aralarındaki boşluğu kibarlaştırdık */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
     
     .gallery-grid img {
-        height: auto; /* Eski sabit yüksekliği (şerit yapan sorunu) iptal ettik */
-        aspect-ratio: 4 / 3; /* Fotoğrafların her zaman standart bir dikdörtgen (kutu) oranında kalmasını sağlar */
+        height: auto;
+        aspect-ratio: 4 / 3;
     }
     
-    /* 5. Ara Başlıklar (Bannerlar) */
     .page-banner {
         padding: 2rem 1rem;
     }
@@ -387,68 +397,19 @@ footer {
         font-size: 1.8rem;
     }
     
-    /* 6. Sabit WhatsApp ve Instagram Butonları */
     .floating-social {
-        bottom: 15px; /* Telefonda baş parmağa daha yakın olsun diye köşeye çektik */
+        bottom: 15px;
         right: 15px;
+        gap: 10px;
     }
-    .float-btn {
-        width: 45px; /* Telefonda çok yer kaplamaması için ikonları biraz küçülttük */
-        height: 45px;
-    }
-    .float-btn svg {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-/* Arama Çubuğu Tasarımı */
-.search-box input {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-    font-size: 0.95rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    width: 180px;
-}
-
-.search-box input:focus {
-    border-color: #1d3557;
-    box-shadow: 0 0 5px rgba(29, 53, 87, 0.3);
-    width: 220px; /* Tıklanınca hafifçe genişler */
-}
-
-/* =========================================
-   KESİN ÇÖZÜM: MODERN ARAMA ÇUBUĞU VE SVG SİMGESİ
-   ========================================= */
-.search-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.search-box input {
-    width: 200px;
-    padding: 0.6rem 1rem 0.6rem 2.5rem; /* Sol boşluk simge için bırakıldı */
-    background-color: #f1f3f5;
-    border: 1px solid #e2e8f0;
-    border-radius: 30px;
-    outline: none;
-    font-size: 0.95rem;
-    color: #333;
-    transition: all 0.3s ease;
     
-    /* Doğrudan arka plana gri renkli temiz bir büyüteç SVG'si ekliyoruz */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2364748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
-    background-repeat: no-repeat;
-    background-position: 12px center;
-}
-
-/* Tıklandığında hafifçe genişler, mavi/renkli hiçbir çerçeve oluşmaz */
-.search-box input:focus {
-    width: 240px;
-    background-color: #fff;
-    border-color: #cbd5e1;
-    box-shadow: none;
+    .float-btn, .floating-search-btn {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .float-btn svg, .floating-search-btn svg {
+        width: 22px;
+        height: 22px;
+    }
 }
