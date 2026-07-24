@@ -21,3 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentYear = new Date().getFullYear();
     document.getElementById("copyright-year").textContent = `© ${currentYear} Yedigün Teknik Servis. Tüm hakları saklıdır.`;
 });
+
+// Sağ alttaki yuvarlak arama butonuna tıklandığında çalışır
+function openSearchPrompt() {
+    const keyword = prompt("Hangi hizmeti veya sayfayı aramak istiyorsunuz? (Örn: Galeri, Hakkımızda, Klima, Buzdolabı)");
+    
+    if (keyword) {
+        const query = keyword.toLowerCase();
+        if (query.includes('galeri') || query.includes('foto') || query.includes('resim')) {
+            window.location.href = 'galeri.html';
+        } else if (query.includes('hakkı') || query.includes('biz') || query.includes('servis')) {
+            window.location.href = 'hakkimizda.html';
+        } else if (query.includes('hizmet') || query.includes('tamir') || query.includes('klima') || query.includes('buzdolabı')) {
+            window.location.href = 'hizmetler.html';
+        } else if (query.includes('iletişim') || query.includes('telefon') || query.includes('adres')) {
+            window.location.href = 'iletisim.html';
+        } else {
+            alert('Aradığınız kriterlere uygun sonuç bulunamadı.');
+        }
+    }
+}
