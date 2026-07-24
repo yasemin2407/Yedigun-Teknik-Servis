@@ -420,7 +420,7 @@ footer {
 }
 
 /* =========================================
-   MODERN ARAMA ÇUBUĞU TASARIMI
+   MODERN ARAMA ÇUBUĞU (ÇERÇEVESİZ / TEMİZ)
    ========================================= */
 .search-box {
     position: relative;
@@ -430,17 +430,17 @@ footer {
 
 .search-box input {
     width: 200px;
-    padding: 0.6rem 1rem 0.6rem 2.4rem; /* Sol boşluk büyüteç simgesi için bırakıldı */
+    padding: 0.6rem 1rem 0.6rem 2.4rem;
     background-color: #f1f3f5;
     border: 1px solid #e2e8f0;
-    border-radius: 30px; /* Tamamen oval modern hatlar */
-    outline: none;
+    border-radius: 30px;
+    outline: none; /* Tarayıcının kendi koyduğu dış çizgiyi tamamen kaldırır */
     font-size: 0.95rem;
     color: #333;
     transition: all 0.3s ease;
 }
 
-/* Arama çubuğunun sol iç kısmına şık bir büyüteç simgesi ekleyelim */
+/* Arama çubuğunun sol iç kısmındaki büyüteç simgesi */
 .search-box::before {
     content: "🔍";
     position: absolute;
@@ -450,10 +450,10 @@ footer {
     pointer-events: none;
 }
 
-/* Tıklandığında (Odaklanıldığında) oluşacak modern efekt */
+/* Tıklandığında sadece hafifçe genişler, o mavi dış çerçeve çıkmaz */
 .search-box input:focus {
-    width: 240px; /* Tıklandığında hafifçe genişler */
+    width: 240px;
     background-color: #fff;
-    border-color: #1d3557;
-    box-shadow: 0 0 0 4px rgba(29, 53, 87, 0.15); /* Yumuşak kurumsal gölge */
+    border-color: #cbd5e1;
+    box-shadow: none; /* Mavi/mor gölgeyi tamamen iptal eder */
 }
