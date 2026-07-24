@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Sağ alttaki yuvarlak arama butonuna tıklandığında çalışır
 function openSearchPrompt() {
-    const keyword = prompt("Hangi hizmeti veya sayfayı aramak istiyorsunuz? (Örn: Galeri, Hakkımızda, Klima, Buzdolabı)");
+    const keyword = prompt("Hangi hizmeti veya sayfayı aramak istiyorsunuz? (Örn: Galeri, Hakkımızda, Hizmetler, İletişim, Klima, Buzdolabı)");
     
     if (keyword) {
-        const query = keyword.toLowerCase();
+        const query = keyword.toLowerCase().trim();
         if (query.includes('galeri') || query.includes('foto') || query.includes('resim')) {
             window.location.href = 'galeri.html';
         } else if (query.includes('hakkı') || query.includes('biz') || query.includes('servis')) {
