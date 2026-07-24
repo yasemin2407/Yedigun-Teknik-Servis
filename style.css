@@ -1,0 +1,403 @@
+/* =========================================
+   1. TEMEL SIFIRLAMA VE AYARLAR
+   ========================================= */
+html {
+    scroll-behavior: smooth; /* Tıklanan yere yumuşakça kaymayı sağlar */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Menü tıklandığında başlıklar menünün altında kalmasın diye pay bırakıyoruz */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* =========================================
+   2. HEADER VE NAVİGASYON (MENÜ)
+   ========================================= */
+header {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 1.2rem 0; /* Sabit menü çok kalın durmasın diye inceltilmişti */
+    position: sticky; /* Menüyü sayfanın üstüne sabitler */
+    top: 0; 
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    max-height: 60px;
+    display: block;
+    object-fit: contain;
+}
+
+/* Linkler */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2b2d42;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+nav > ul > li > a:hover {
+    color: #e63946;
+}
+
+/* Hemen Ara Butonu */
+.btn-call {
+    background-color: #e63946;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================================
+   3. HERO (ANA KARŞILAMA EKRANI)
+   ========================================= */
+.hero {
+    /* 'center 30%' kısmındaki 30 değerini değiştirerek resmi tam istediğin yere oturtabilirsin */
+    background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('bg.png') center 63%/cover no-repeat;
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 7rem 1rem;
+    margin-bottom: 4rem;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* =========================================
+   4. ALT SAYFA BAŞLIKLARI (İNCE ŞERİTLER)
+   ========================================= */
+.page-banner {
+    width: 100%;
+    background-color: #1d3557; /* Arka planda resim yok, sadece kurumsal lacivert renk */
+    color: white;
+    text-align: center;
+    padding: 1.2rem 1rem; /* Kibar ve ince bir şerit */
+    margin-bottom: 3rem;
+}
+
+.page-banner h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+    letter-spacing: normal; 
+}
+
+.page-banner p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+.page-banner p span {
+    margin: 0 0.8rem;
+    color: white;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+/* =========================================
+   5. HAKKIMIZDA BÖLÜMÜ
+   ========================================= */
+.about-section {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.about-image {
+    flex: 1;
+    border-bottom: 25px solid #1d3557;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h4 {
+    color: #0056b3;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.about-text h2 {
+    color: #1d3557;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: #555;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* =========================================
+   6. HİZMETLER SİSTEMİ
+   ========================================= */
+.services-section {
+    margin-bottom: 5rem;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid #457b9d;
+    transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   7. GALERİ BÖLÜMÜ
+   ========================================= */
+.gallery-section {
+    margin-bottom: 5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* FOTOĞRAFI KESMEDEN TAM SIĞDIRMA */
+.gallery-grid img.sigdir {
+    object-fit: contain; /* Fotoğrafı kırpmak yerine küçülterek kutunun içine tam oturtur */
+    background-color: #f1f3f5; /* Fotoğraf tam sığdığında yanlarda kalacak boşluklara çok hafif, şık bir gri fon atar */
+}
+
+/* FOTOĞRAFI KESEREK AMA MERKEZDEN ORTALAYARAK GÖSTERME */
+.gallery-grid img.ortala {
+    object-fit: cover;
+    object-position: center center; /* Görselin tam göbeğini odaklar */
+}
+
+/* FOTOĞRAFIN ÜST KISMINA ODAKLANMA (Örn: Klimalar için) */
+.gallery-grid img.ustten-hizala {
+    object-fit: cover;
+    object-position: center top; /* Görselin altını keser, üst kısmını (tavana yakın yeri) odaklar */
+}
+
+/* FOTOĞRAFIN ALT KISMINA ODAKLANMA (Örn: Yerdeki motorlar için) */
+.gallery-grid img.alttan-hizala {
+    object-fit: cover;
+    object-position: center bottom; /* Görselin üstünü keser, yerdeki detayı odaklar */
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* =========================================
+   9. SABİT SOSYAL MEDYA BUTONLARI
+   ========================================= */
+.floating-social {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* İki buton arasındaki boşluk */
+    z-index: 1000; /* Her zaman diğer içeriklerin üstünde kalmasını sağlar */
+}
+
+.float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+/* İkonların Boyut ve Rengi */
+.float-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* WhatsApp Rengi */
+.whatsapp {
+    background-color: #25d366;
+}
+
+/* Instagram Renk Geçişi (Gradient) */
+.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Fareyle Üzerine Gelince Büyüme Efekti */
+.float-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* =========================================
+   10. MOBİL UYUM (CEP TELEFONU EKRANLARI İÇİN)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Menü ve Header Ayarları (Telefonda alt alta dizer) */
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    nav ul {
+        flex-wrap: wrap; /* Sığmayan linkleri alt satıra atar */
+        justify-content: center;
+        gap: 1rem;
+    }
+    nav a {
+        font-size: 1rem; /* Telefondaki menü yazılarını biraz küçülttük */
+    }
+    
+    /* 2. Ana Karşılama Ekranı (Hero) */
+    .hero {
+        padding: 4rem 1rem; /* Kutuyu telefona göre daralttık */
+    }
+    .hero h2 {
+        font-size: 2.2rem; /* Dev başlığı telefon ekranına sığdırdık */
+    }
+    
+    /* 3. Hakkımızda Bölümü (Resim üstte, yazı altta olacak) */
+    .about-section {
+        flex-direction: column; 
+        gap: 2rem;
+    }
+    .about-image {
+        border-bottom: 10px solid #1d3557;
+    }
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* 4. Galeri (Mobilde yan yana 2 resim ve orantılı dikdörtgen görünüm) */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Telefonda yan yana 2 resim gösterir */
+        gap: 10px; /* Telefondaki dar ekranda aralarındaki boşluğu kibarlaştırdık */
+    }
+    
+    .gallery-grid img {
+        height: auto; /* Eski sabit yüksekliği (şerit yapan sorunu) iptal ettik */
+        aspect-ratio: 4 / 3; /* Fotoğrafların her zaman standart bir dikdörtgen (kutu) oranında kalmasını sağlar */
+    }
+    
+    /* 5. Ara Başlıklar (Bannerlar) */
+    .page-banner {
+        padding: 2rem 1rem;
+    }
+    .page-banner h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* 6. Sabit WhatsApp ve Instagram Butonları */
+    .floating-social {
+        bottom: 15px; /* Telefonda baş parmağa daha yakın olsun diye köşeye çektik */
+        right: 15px;
+    }
+    .float-btn {
+        width: 45px; /* Telefonda çok yer kaplamaması için ikonları biraz küçülttük */
+        height: 45px;
+    }
+    .float-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+}
