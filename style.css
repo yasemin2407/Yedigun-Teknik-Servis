@@ -311,35 +311,13 @@ footer {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-.float-btn:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+/* Doğrudan Arama Butonu Rengi */
+.call-btn {
+    background-color: #1d3557; /* Kurumsal lacivert tonu */
 }
 
-.floating-search-btn {
-    width: 55px;
-    height: 55px;
-    background-color: #1d3557;
-    border-radius: 50%; /* Tam yuvarlak yapar */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-}
-
-.floating-search-btn:hover {
-    transform: scale(1.1) translateY(-5px);
-    background-color: #e63946;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-
-.floating-search-btn svg {
-    width: 24px;
-    height: 24px;
-    fill: #fff; /* İkonu beyaz yapar */
+.call-btn:hover {
+    background-color: #e63946; /* Üzerine gelince kırmızı vurgu */
 }
 
 /* =========================================
